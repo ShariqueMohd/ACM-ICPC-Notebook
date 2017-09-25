@@ -16,7 +16,7 @@ public:
 
     Complex() : x(0.0), y(0.0) {}
     Complex(T a) : x(a), y(0.0) {}
-    Complex(T a, T b) : x(a), x(b) {}
+    Complex(T a, T b) : x(a), y(b) {}
 
     T get_real() {
         return this->x;
@@ -61,6 +61,10 @@ public:
         return Complex(this->x/num, this->x/num);
     }
 };
+
+
+
+
 
 int main() {
 
