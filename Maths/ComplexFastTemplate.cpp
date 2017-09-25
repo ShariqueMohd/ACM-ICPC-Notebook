@@ -58,7 +58,7 @@ public:
     }
 
     Complex operator / (const T &num) {
-        return Complex(this->x/num, this->x/num);
+        return Complex(this->x/num, this->y/num);
     }
 };
 
