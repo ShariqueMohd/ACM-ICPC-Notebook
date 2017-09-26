@@ -60,21 +60,34 @@ void makeFSM(string s) {
 		}
 }
 
+void findString(string s, string text) {
+	//prints the end of the occurances of the pattern in the text;
+	int i,j,len,state,count,acceptableState;
+	len = text.size();
+	state = 0;
+	acceptableState = s.size();
+	for(i = 0; i < len; ++i) {
+		state = fsm[state][alphabet[text[i]]];
+		if(state == acceptableState) cout << "found at i = " << i << endl;
+	}
+}
+
 
 int main()
 {
 	ll i,j;
-	string st,validchar,text;
-	cin >> st;
+	string pattern,validchar,text;
+	cin >> pattern;
 	cin >> validchar;
+	cin >> text;
 	mapCharToInt(validchar);
-	makeFSM(st);
-
-	for(i = 0; i <= st.size(); ++i) {
-		for(j = 0; j < alphabet.size(); ++j) {
-			cout << fsm[i][j] << " ";
-		}
-		cout << endl;
-	}
+	makeFSM(pattern);
+	findString(pattern,text);
+	// for(i = 0; i <= st.size(); ++i) {
+	// 	for(j = 0; j < alphabet.size(); ++j) {
+	// 		cout << fsm[i][j] << " ";
+	// 	}
+	// 	cout << endl;
+	// }
 	return 0;
 }
