@@ -14,6 +14,8 @@ void sieve(int n) {
             prime.pb(i);
         }
         for(int j=0; j<prime.size(); j++) {
+			if(i*prime[j]>=N)
+				break;
             isC[i*prime[j]] = 1;
             if(i%prime[j]==0) {
                 break;
