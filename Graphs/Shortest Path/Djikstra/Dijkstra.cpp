@@ -1,3 +1,4 @@
+#include <bits/stdc++.h>
 #include <cstring>
 #include <cstdio>
 #include <vector>
@@ -79,6 +80,7 @@ void dijkstra(int start) {
 int main() {
     int n, e, i, u, v, w, start;
     /*  Read a graph with n nodes and e edges.  */
+    cout << INF << "\n";
     while(scanf("%d %d", &n, &e) == 2) {
 
         /*  Reset the graph */
